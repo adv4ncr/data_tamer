@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>data_tamer_cpp</name>
-  <version>0.9.4</version>
+  <version>1.0.0</version>
   <description>
   DataTamer data logging library
   </description>
@@ -15,6 +15,7 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
   <depend>mcap_vendor</depend>
   <depend>data_tamer_msgs</depend>
 

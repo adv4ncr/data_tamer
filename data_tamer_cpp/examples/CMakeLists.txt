@@ -6,10 +6,10 @@ function(CompileExample TARGET)
     target_link_libraries(${TARGET} data_tamer)
 endfunction()
 
-CompileExample(example)
-CompileExample(custom_types)
+CompileExample(T01_basic_example)
+CompileExample(T02_custom_types)
+CompileExample(T03_mcap_writer)
 CompileExample(mcap_1m_per_sec)
-CompileExample(mcap_writer_sample)
 
 add_executable(mcap_reader mcap_reader.cpp)
 target_include_directories(mcap_reader
@@ -23,7 +23,7 @@ if ( ament_cmake_FOUND )
     install(TARGETS ros2_publisher
             DESTINATION lib/${PROJECT_NAME})
 else()
-    target_link_libraries(mcap_reader data_tamer mcap_lib)
+    target_link_libraries(mcap_reader data_tamer ${mcap_LIBRARY})
     target_include_directories(mcap_reader
      PRIVATE
       $<BUILD_INTERFACE:${PROJECT_DIR}/3rdparty>
